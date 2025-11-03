@@ -4,52 +4,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wuju Space - Where Ideas Take Shape</title>
+    <link rel="icon" type="image/x-icon" href="assets/company/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/company/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/company/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Splash Screen -->
     <div id="splash-screen" class="splash-screen">
         <div class="splash-content">
-            <h1 class="splash-text gradient-text-orange-red" id="splash-text">Game Development</h1>
+            <h1 class="splash-text" id="splash-text">Where Ideas Take Shape.</h1>
         </div>
     </div>
 
     <!-- Sticky Navigation -->
     <nav class="sticky-nav" id="sticky-nav">
+        <!-- Animated Gradient Background -->
+        <div class="nav-background-gradient-animation">
+            <div class="nav-gradient-blob nav-gradient-blob-1"></div>
+            <div class="nav-gradient-blob nav-gradient-blob-2"></div>
+            <div class="nav-gradient-blob nav-gradient-blob-3"></div>
+        </div>
         <div class="nav-container">
             <div class="nav-logo-wrapper">
-                <div class="logo-text-wrapper">
-                    <div class="logo-line-1">Wuju<span class="logo-icon"></span></div>
-                    <div class="logo-line-2">Space</div>
-                </div>
+                <img src="assets/company/Wuju Space.png" alt="Wuju Space" class="nav-logo-img">
             </div>
-            <ul class="nav-links">
-                <li><a href="#services" class="nav-link">Services</a></li>
-                <li><a href="#work" class="nav-link">Works</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-            </ul>
-            <a href="#contact" class="nav-cta-button">Chat With Us</a>
+            <div class="nav-menu-right">
+                <ul class="nav-links">
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#work" class="nav-link">Works</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                </ul>
+                <a href="#contact" class="nav-cta-button">Chat With Us</a>
+            </div>
         </div>
     </nav>
 
     <!-- Main Content -->
     <div id="main-content" class="main-content hidden">
-        <!-- Hero Section with Animated Gradient Blob -->
-        <section class="hero" id="home">
-            <div class="gradient-blob" id="gradient-blob"></div>
-            <div class="hero-container">
-                <div class="hero-logo">
-                    <div class="logo-text-wrapper">
-                        <div class="logo-line-1">Wuju<span class="logo-icon"></span></div>
-                        <div class="logo-line-2">Space</div>
+        <!-- Modern Hero Section with Blue Gradient -->
+        <section class="hero-section-blue relative min-h-screen flex flex-col overflow-hidden" id="home">
+            <!-- Animated Gradient Background -->
+            <div class="background-gradient-animation">
+                <div class="gradient-blob gradient-blob-1"></div>
+                <div class="gradient-blob gradient-blob-2"></div>
+                <div class="gradient-blob gradient-blob-3"></div>
+                <div class="gradient-blob gradient-blob-4"></div>
+                <div class="gradient-blob gradient-blob-5"></div>
+            </div>
+
+            <!-- Navigation Bar -->
+            <nav class="relative z-10 w-full px-4 sm:px-6 lg:px-8 py-6">
+                <div class="max-w-7xl mx-auto flex items-center justify-between">
+                    <!-- Menu Items -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium relative group">
+                            Home
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                        <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium relative group">
+                            About
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                        <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium relative group">
+                            Services
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                        <a href="#work" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium relative group">
+                            Works
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                    </div>
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden text-gray-700 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Hero Content -->
+            <div class="relative z-10 flex-1 flex items-center justify-center px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+                <div class="max-w-7xl mx-auto w-full">
+                    <div class="text-center space-y-8 mb-12">
+                        <!-- Badge/Tag -->
+                        <div class="inline-flex items-center px-4 py-2 rounded-full bg-blue-100/80 backdrop-blur-sm border border-blue-200 text-blue-700 text-sm font-medium">
+                            <span class="w-2 h-2 bg-blue-600 rounded-full mr-2 animate-pulse"></span>
+                            Where Ideas Take Shape
+                        </div>
+                        
+                        <!-- Headline -->
+                        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight px-4">
+                            <span class="block">Transform Visions</span>
+                            <span class="block bg-gradient-to-r from-blue-600 via-blue-500 to-blue-700 bg-clip-text text-transparent">Into Reality</span>
+                        </h1>
+                        
+                        <!-- Subheadline -->
+                        <p class="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed font-light">
+                            Wuju's innovative approach transforms visions into reality, where ideas take shape through cutting-edge technology and creative excellence.
+                        </p>
+                        
+                        <!-- CTA Buttons -->
+                        <div class="pt-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
+                            <button class="bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 hover:scale-105">
+                                Get Started
+                            </button>
+                            <button class="bg-white/80 backdrop-blur-sm border-2 border-blue-300 text-blue-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:border-blue-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                                Learn More
+                            </button>
+                        </div>
                     </div>
                 </div>
-                <h1 class="hero-headline">
-                    <span class="headline-word">SPACES</span>
-                    <span class="headline-word highlight">THAT</span>
-                    <span class="headline-word">INSPIRE</span>
-                </h1>
-                <button class="hero-cta-button">Chat With Us</button>
             </div>
         </section>
 
@@ -235,105 +305,96 @@
         <section class="project-showcase" id="work">
             <div class="showcase-blob"></div>
             <div class="container">
-                <div class="showcase-wrapper">
+                <div class="project-header">
+                    <span class="header-dot"></span>
+                    <span class="header-text">FEATURED PROJECTS</span>
+                </div>
+                <div class="project-list-wrapper">
+                    <div class="project-image-overview" id="project-image-overview">
+                        <img src="" alt="Project Image" id="project-image" class="project-image">
+                    </div>
                     <div class="project-list">
-                        <div class="project-header">
-                            <span class="header-dot"></span>
-                            <span class="header-text">FEATURED PROJECTS</span>
-                        </div>
-                        <div class="project-item" data-image="project1.jpg">
-                            <div class="project-title-wrapper">
-                                <h3 class="project-title">Play New Kidvision</h3>
-                                <span class="project-client">NIKE Environment</span>
-                            </div>
-                        </div>
-                        <div class="project-item active" data-image="project2.jpg">
-                            <div class="project-title-wrapper">
-                                <h3 class="project-title">SOHO NYC</h3>
-                                <span class="project-client">ARC'TERYX Environment</span>
-                            </div>
-                        </div>
-                        <div class="project-item" data-image="project3.jpg">
-                            <div class="project-title-wrapper">
-                                <h3 class="project-title">Makers Studio HOI</h3>
-                                <span class="project-client">NIKE Experiential</span>
-                            </div>
-                        </div>
-                        <div class="project-item" data-image="project4.jpg">
-                            <div class="project-title-wrapper">
-                                <h3 class="project-title">SOHO 2023</h3>
-                                <span class="project-client">ARC'TERYX Environment</span>
-                            </div>
-                        </div>
-                        <div class="project-item" data-image="project5.jpg">
-                            <div class="project-title-wrapper">
-                                <h3 class="project-title">NYFW Popup</h3>
-                                <span class="project-client">NIKE Environment</span>
-                            </div>
-                        </div>
-                        <div class="project-item" data-image="project6.jpg">
-                            <div class="project-title-wrapper">
-                                <h3 class="project-title">Air Force 1 2021</h3>
-                                <span class="project-client">NIKE Environment</span>
-                            </div>
-                        </div>
-                        <div class="project-item" data-image="project7.jpg">
+                    <div class="project-item" data-image="project7.jpg">
+                        <div class="project-content">
                             <div class="project-title-wrapper">
                                 <h3 class="project-title">Superpixel Christmas Greeting Card AR</h3>
                                 <span class="project-client">Superpixel AR</span>
                             </div>
+                            <p class="project-description">An augmented reality greeting card that brings festive celebrations to life through interactive 3D animations and immersive holiday experiences. This innovative project transforms traditional holiday greetings into magical digital moments, where recipients can unlock animated scenes, interactive games, and personalized messages through their smartphones, creating lasting memories that extend the joy of the holiday season.</p>
                         </div>
-                        <div class="project-item" data-image="project8.jpg">
+                    </div>
+                    <div class="project-item" data-image="project8.jpg">
+                        <div class="project-content">
                             <div class="project-title-wrapper">
                                 <h3 class="project-title">Molca Factory</h3>
                                 <span class="project-client">Molca Teknologi Nusantara</span>
                             </div>
+                            <p class="project-description">A comprehensive digital transformation solution for manufacturing facilities, integrating smart technologies and data visualization for enhanced operations. This enterprise-level project combines IoT sensors, real-time analytics, and intuitive dashboard interfaces to provide factory managers with unprecedented visibility into production processes, equipment performance, and operational efficiency, enabling data-driven decision-making that optimizes output and reduces downtime.</p>
                         </div>
-                        <div class="project-item" data-image="project9.jpg">
+                    </div>
+                    <div class="project-item" data-image="project9.jpg">
+                        <div class="project-content">
                             <div class="project-title-wrapper">
                                 <h3 class="project-title">Ajinomoto - Digital Twin</h3>
                                 <span class="project-client">Ajinomoto Digital Twin</span>
                             </div>
+                            <p class="project-description">Creating a virtual replica of production facilities enabling real-time monitoring, predictive analytics, and optimized manufacturing processes. This digital twin technology allows stakeholders to visualize entire manufacturing operations in real-time, simulate scenarios, identify bottlenecks before they occur, and make informed decisions that improve productivity, reduce costs, and ensure consistent quality across all production lines.</p>
                         </div>
-                        <div class="project-item" data-image="project10.jpg">
+                    </div>
+                    <div class="project-item" data-image="project10.jpg">
+                        <div class="project-content">
                             <div class="project-title-wrapper">
                                 <h3 class="project-title">AR Panjat Pinang - Superpixel</h3>
                                 <span class="project-client">Superpixel Independence Day</span>
                             </div>
+                            <p class="project-description">An augmented reality adaptation of traditional Indonesian Independence Day celebration, bringing cultural heritage into the digital age with interactive experiences. This culturally significant project preserves traditional games and celebrations while making them accessible to modern audiences through AR technology, allowing users to participate in virtual versions of classic Independence Day activities while learning about Indonesian history and cultural values.</p>
                         </div>
-                        <div class="project-item" data-image="project11.jpg">
+                    </div>
+                    <div class="project-item" data-image="project11.jpg">
+                        <div class="project-content">
                             <div class="project-title-wrapper">
                                 <h3 class="project-title">Re-Route Fest Singapore 2024</h3>
                                 <span class="project-client">Reroute Fest</span>
                             </div>
+                            <p class="project-description">A festival experience combining music, technology, and art through innovative digital installations and immersive audience engagement platforms. This multi-sensory event design created unforgettable moments where festival-goers could interact with synchronized light displays, reactive soundscapes, and participatory art installations that responded to their movements, creating a unique fusion of technology and creativity that elevated the entire festival experience.</p>
                         </div>
-                        <div class="project-item" data-image="project12.jpg">
+                    </div>
+                    <div class="project-item" data-image="project12.jpg">
+                        <div class="project-content">
                             <div class="project-title-wrapper">
                                 <h3 class="project-title">Toyota Astra Motor Experience</h3>
                                 <span class="project-client">TAM Environment</span>
                             </div>
+                            <p class="project-description">Revolutionizing automotive retail through immersive showroom experiences that blend physical and digital interactions for enhanced customer engagement. Through configurable vehicle displays, virtual test drives, and personalized customization interfaces, customers can explore every aspect of their potential purchase in an engaging, interactive environment that makes car shopping an enjoyable and informative experience rather than a transactional encounter.</p>
                         </div>
-                        <div class="project-item" data-image="project13.jpg">
+                    </div>
+                    <div class="project-item" data-image="project13.jpg">
+                        <div class="project-content">
                             <div class="project-title-wrapper">
                                 <h3 class="project-title">Intive Studio Branding</h3>
                                 <span class="project-client">Intive Studio</span>
                             </div>
+                            <p class="project-description">A comprehensive brand identity system that reflects innovation and creativity across all digital touchpoints and physical spaces. This holistic rebrand encompassed everything from logo design and color palettes to website architecture, office environments, and marketing materials, ensuring a consistent and compelling brand experience that communicates the studio's values and expertise at every interaction point.</p>
                         </div>
-                        <div class="project-item" data-image="project14.jpg">
+                    </div>
+                    <div class="project-item" data-image="project14.jpg">
+                        <div class="project-content">
                             <div class="project-title-wrapper">
                                 <h3 class="project-title">Bank International Portal</h3>
                                 <span class="project-client">Bank International</span>
                             </div>
+                            <p class="project-description">A modern banking platform designed for seamless user experience, combining functionality with intuitive design for enhanced financial services. This comprehensive digital banking solution streamlines complex financial transactions while maintaining security and compliance, allowing customers to manage accounts, investments, and services through an interface that feels both powerful and approachable, making sophisticated banking tools accessible to users of all technical backgrounds.</p>
                         </div>
-                        <div class="project-item" data-image="project15.jpg">
+                    </div>
+                    <div class="project-item" data-image="project15.jpg">
+                        <div class="project-content">
                             <div class="project-title-wrapper">
                                 <h3 class="project-title">Universitas Airlangga VR Experience</h3>
                                 <span class="project-client">UNAIR VR</span>
                             </div>
+                            <p class="project-description">An educational virtual reality platform that transforms learning experiences through immersive simulations and interactive academic environments. This groundbreaking educational tool transports students into realistic scenarios that would be impossible to recreate in traditional classrooms, from exploring historical events first-hand to conducting virtual scientific experiments, revolutionizing how knowledge is acquired and retained through experiential learning.</p>
                         </div>
                     </div>
-                    <div class="project-image-placeholder">
-                        <img src="" alt="Project Image" id="project-image" class="project-image">
                     </div>
                 </div>
             </div>
@@ -382,28 +443,56 @@
         <footer class="footer" id="contact">
             <div class="container">
                 <div class="footer-content">
-                    <div class="footer-column">
-                        <h3 class="gradient-text">Navigation</h3>
-                        <ul class="footer-links">
-                            <li><a href="#work">Work</a></li>
-                            <li><a href="#studio">Studio</a></li>
-                            <li><a href="#process">Process</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
+                    <!-- Left Column: Brand & Description -->
+                    <div class="footer-left">
+                        <div class="footer-brand">
+                            <h2 class="footer-brand-name">Wuju Space</h2>
+                            <p class="footer-tagline">Where ideas take shape</p>
+                        </div>
+                        <p class="footer-description">
+                            A creative technology studio bridging imagination and execution. Based in Indonesia, collaborating worldwide.
+                        </p>
                     </div>
-                    <div class="footer-column">
-                        <h3 class="gradient-text">Wuju Space</h3>
-                        <p>Brooklyn, NY</p>
-                        <p class="copyright">© 2024 Wuju Space</p>
-                        <p>Where ideas take shape</p>
+
+                    <!-- Right Column: Contact & Social -->
+                    <div class="footer-right">
+                        <div class="footer-contact">
+                            <a href="mailto:hello@wuju.space" class="footer-link">hello@wuju.space</a>
+                            <a href="https://www.wuju.space" class="footer-link" target="_blank" rel="noopener noreferrer">www.wuju.space</a>
+                        </div>
+                        <div class="footer-social">
+                            <a href="https://linkedin.com" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                            <a href="https://instagram.com" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                            <a href="https://behance.net" class="social-icon" aria-label="Behance" target="_blank" rel="noopener noreferrer">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 7h-7v-2h7v2z"></path>
+                                    <path d="M15 14h-3v-2h3v2z"></path>
+                                    <circle cx="8" cy="10" r="3"></circle>
+                                    <path d="M14 12h-4"></path>
+                                    <path d="M10 12h-4"></path>
+                                    <path d="M22 21h-8v-6h8v6z"></path>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
-                    <div class="footer-column">
-                        <h3 class="gradient-text">Stay Updated</h3>
-                        <form class="newsletter-form" id="newsletter-form">
-                            <input type="email" placeholder="Your email" required class="email-input">
-                            <button type="submit" class="submit-btn gradient-text">Subscribe</button>
-                        </form>
-                    </div>
+                </div>
+
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <div class="footer-divider"></div>
+                    <p class="footer-copyright">© 2025 Wuju Space</p>
                 </div>
             </div>
         </footer>
