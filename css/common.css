@@ -21,6 +21,7 @@ img, video, iframe {
 }
 
 :root {
+    /* Legacy Colors (keeping for backward compatibility) */
     --white: #ffffff;
     --cream: #faf9f6;
     --beige: #F8F5F0;
@@ -32,6 +33,52 @@ img, video, iframe {
     --gradient-blue-light: #4da6ff;
     --gradient-blue-dark: #0066cc;
     --logo-blue: #0066cc;
+    
+    /* Wuju Design System Tokens */
+    --wuju-bg-light: #f9fafc;
+    --wuju-text-light: #1b1b1d;
+    --wuju-accent-light: linear-gradient(135deg, #8b5cf6, #3b82f6);
+    --wuju-accent-solid-light: #8b5cf6;
+    --wuju-surface-light: #ffffff;
+    --wuju-bg-dark: #0f1014;
+    --wuju-text-dark: #e8e8f0;
+    --wuju-accent-dark: linear-gradient(135deg, #60a5fa, #a855f7);
+    --wuju-accent-solid-dark: #60a5fa;
+    --wuju-surface-dark: #1a1b21;
+    
+    /* Wuju Spacing Scale (8-point grid) */
+    --wuju-space-xs: 8px;
+    --wuju-space-sm: 16px;
+    --wuju-space-md: 24px;
+    --wuju-space-lg: 40px;
+    --wuju-space-xl: 60px;
+    --wuju-space-2xl: 80px;
+    
+    /* Wuju Border Radius */
+    --wuju-radius-xl: 24px;
+    --wuju-radius-lg: 16px;
+    --wuju-radius-md: 8px;
+    --wuju-radius-sm: 4px;
+    
+    /* Wuju Transitions */
+    --wuju-transition-fast: 0.25s ease;
+    --wuju-transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Wuju Shadows */
+    --wuju-shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.1);
+    --wuju-shadow-medium: 0 12px 32px rgba(0, 0, 0, 0.2);
+    --wuju-shadow-strong: 0 20px 48px rgba(0, 0, 0, 0.3);
+    
+    /* Wuju Typography Scale */
+    --wuju-text-xs: 0.75rem;
+    --wuju-text-sm: 0.875rem;
+    --wuju-text-base: 1rem;
+    --wuju-text-lg: 1.125rem;
+    --wuju-text-xl: 1.25rem;
+    --wuju-text-2xl: 1.5rem;
+    --wuju-text-3xl: 2rem;
+    --wuju-text-4xl: 2.5rem;
+    --wuju-text-5xl: 3.5rem;
 }
 
 /* Dark Theme Variables */
@@ -47,6 +94,13 @@ img, video, iframe {
     --gradient-blue-light: #4da6ff;
     --gradient-blue-dark: #0066cc;
     --logo-blue: #4da6ff;
+    
+    /* Wuju Dark Theme Overrides */
+    --wuju-bg-light: var(--wuju-bg-dark);
+    --wuju-text-light: var(--wuju-text-dark);
+    --wuju-accent-light: var(--wuju-accent-dark);
+    --wuju-accent-solid-light: var(--wuju-accent-solid-dark);
+    --wuju-surface-light: var(--wuju-surface-dark);
 }
 
 /* Dark Theme Border and Shadow Overrides */

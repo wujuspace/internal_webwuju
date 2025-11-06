@@ -9,8 +9,9 @@
     <link rel="apple-touch-icon" href="assets/Wuju Space.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Rubik:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/coreStyleGuide.css">
     <link rel="stylesheet" href="css/services.css">
 </head>
 <body>
@@ -182,37 +183,36 @@
                 <div class="services-page-content">
                     <!-- Left Sidebar - Filters -->
                     <div class="services-filters">
-                        <h2 class="services-filters-title">Filter by category</h2>
-                        <div class="filter-chips">
-                            <button class="filter-chip" data-filter="game">Game</button>
-                            <button class="filter-chip" data-filter="virtual-reality">Virtual Reality</button>
-                            <button class="filter-chip" data-filter="augmented-reality">Augmented Reality</button>
-                            <button class="filter-chip" data-filter="digital-twin">Digital Twin</button>
-                            <button class="filter-chip" data-filter="web-development">Web Development</button>
-                        </div>
-                        
-                        <h2 class="services-filters-title" style="margin-top: 2.5rem;">Sort by</h2>
-                        <div class="filter-chips">
+                        <h2 class="services-filters-title">Sort by</h2>
+                        <div class="filter-chips" id="sort-chips-container">
                             <button class="filter-chip sort-chip" data-sort="newest">Newest</button>
                             <button class="filter-chip sort-chip" data-sort="oldest">Oldest</button>
                         </div>
                         
+                        <h2 class="services-filters-title" style="margin-top: 2.5rem;">Filter by platform</h2>
+                        <div class="filter-chips" id="platform-chips-container">
+                            <button class="filter-chip platform-chip" data-filter="augmented-reality">Augmented Reality</button>
+                            <button class="filter-chip platform-chip" data-filter="digital-twin">Digital Twin</button>
+                            <button class="filter-chip platform-chip" data-filter="game">Game</button>
+                            <button class="filter-chip platform-chip" data-filter="virtual-reality">Virtual Reality</button>
+                            <button class="filter-chip platform-chip" data-filter="web-development">Web Development</button>
+                        </div>
+                        
                         <h2 class="services-filters-title" style="margin-top: 2.5rem;">Filter by client</h2>
-                        <div class="filter-chips">
-                            <button class="filter-chip client-chip" data-client="all">All Clients</button>
-                            <button class="filter-chip client-chip" data-client="superpixel">Superpixel</button>
-                            <button class="filter-chip client-chip" data-client="molca-teknologi-nusantara">Molca Teknologi Nusantara</button>
+                        <div class="filter-chips" id="client-chips-container">
                             <button class="filter-chip client-chip" data-client="ajinomoto">Ajinomoto</button>
+                            <button class="filter-chip client-chip" data-client="amerta-indah-otsuka">Amerta Indah Otsuka</button>
                             <button class="filter-chip client-chip" data-client="aop-nusametal">AOP Nusametal</button>
                             <button class="filter-chip client-chip" data-client="astra-international">Astra International</button>
                             <button class="filter-chip client-chip" data-client="bank-international">Bank International</button>
                             <button class="filter-chip client-chip" data-client="intive-studio">Intive Studio</button>
+                            <button class="filter-chip client-chip" data-client="molca-teknologi-nusantara">Molca Teknologi Nusantara</button>
                             <button class="filter-chip client-chip" data-client="mount-elizabeth">Mount Elizabeth</button>
-                            <button class="filter-chip client-chip" data-client="amerta-indah-otsuka">Amerta Indah Otsuka</button>
                             <button class="filter-chip client-chip" data-client="petrokimia-gresik">Petrokimia Gresik</button>
-                            <button class="filter-chip client-chip" data-client="pupuk-kaltim">Pupuk Kaltim</button>
                             <button class="filter-chip client-chip" data-client="ppi-curug">PPI Curug</button>
+                            <button class="filter-chip client-chip" data-client="pupuk-kaltim">Pupuk Kaltim</button>
                             <button class="filter-chip client-chip" data-client="reroute-fest">Reroute Fest</button>
+                            <button class="filter-chip client-chip" data-client="superpixel">Superpixel</button>
                             <button class="filter-chip client-chip" data-client="toyota-astra-motor">Toyota Astra Motor</button>
                             <button class="filter-chip client-chip" data-client="toyota-indonesia">Toyota Indonesia</button>
                             <button class="filter-chip client-chip" data-client="universitas-airlangga">Universitas Airlangga</button>
