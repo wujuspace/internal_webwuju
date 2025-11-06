@@ -2111,3 +2111,266 @@ html {
     z-index: 10;
 }
 
+/* Services Page with Filtering */
+.services-page {
+    padding: 6rem 0;
+    background-color: var(--beige);
+    min-height: 80vh;
+}
+
+.services-page-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.services-page-header {
+    margin-bottom: 4rem;
+}
+
+.services-page-header-line {
+    width: 100%;
+    height: 6px;
+    background-color: var(--text-dark);
+    margin-bottom: 1.5rem;
+}
+
+.services-page-title {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--text-dark);
+    text-transform: lowercase;
+    line-height: 1;
+}
+
+.services-page-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* Filters Sidebar */
+.services-filters {
+    position: sticky;
+    top: 120px;
+}
+
+.services-filters-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+}
+
+.filter-chips {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.filter-chip {
+    background-color: var(--light-gray);
+    color: var(--text-dark);
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-chip:hover {
+    background-color: var(--border-gray);
+    transform: translateX(4px);
+}
+
+.filter-chip.active {
+    background-color: #87CEEB;
+    color: var(--text-dark);
+    padding-left: 2.5rem;
+}
+
+.filter-chip.active::before {
+    content: '✓';
+    position: absolute;
+    left: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+/* Project Cards */
+.services-projects {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.project-card {
+    background-color: var(--light-gray);
+    padding: 2.5rem;
+    margin-bottom: 0;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    overflow: hidden;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    background-color: rgba(77, 166, 255, 0.1);
+    transition: width 0.3s ease;
+}
+
+.project-card:hover {
+    background-color: rgba(245, 245, 245, 0.8);
+    transform: translateX(8px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.project-card:hover::before {
+    width: 4px;
+}
+
+.project-card:active {
+    transform: translateX(4px) scale(0.98);
+}
+
+.project-card.hidden {
+    display: none;
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.project-card-number {
+    font-size: clamp(4rem, 6vw, 6rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    opacity: 0.15;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    flex-shrink: 0;
+    min-width: 120px;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover .project-card-number {
+    opacity: 0.25;
+    transform: scale(1.05);
+}
+
+.project-card-content {
+    flex: 1;
+}
+
+.project-card-title {
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .project-card-title {
+    color: var(--gradient-blue-dark);
+}
+
+.project-card-description {
+    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .project-card-description {
+    color: var(--text-dark);
+}
+
+/* Responsive Styles for Services Page */
+@media (max-width: 1024px) {
+    .services-page-content {
+        grid-template-columns: 250px 1fr;
+        gap: 3rem;
+    }
+    
+    .services-filters {
+        top: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-page {
+        padding: 4rem 0;
+    }
+    
+    .services-page-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    .services-filters {
+        position: relative;
+        top: 0;
+    }
+    
+    .filter-chips {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .filter-chip {
+        flex: 0 1 auto;
+    }
+    
+    .project-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .project-card-number {
+        min-width: 80px;
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-page-header-line {
+        height: 4px;
+    }
+    
+    .services-page-title {
+        font-size: 2.5rem;
+    }
+    
+    .project-card {
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
+    
+    .project-card-number {
+        min-width: 60px;
+        font-size: 2.5rem;
+    }
+}
+

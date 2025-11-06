@@ -11,7 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/landing.css">
 </head>
 <body>
     <!-- Splash Screen -->
@@ -31,13 +32,54 @@
         </div>
         <div class="nav-container">
             <div class="nav-logo-wrapper">
-                <img src="assets/Wuju Space.png" alt="Wuju Space" class="nav-logo-img">
+                <a href="index.html">
+                    <img src="assets/Wuju Space.png" alt="Wuju Space" class="nav-logo-img">
+                </a>
             </div>
             <div class="nav-menu-right">
                 <ul class="nav-links">
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#work" class="nav-link">Works</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li class="nav-dropdown-wrapper">
+                        <span class="nav-link nav-dropdown-trigger">
+                            Works
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.5rem; transition: transform 0.3s ease;">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span>
+                        <div class="nav-dropdown">
+                            <div class="nav-dropdown-content">
+                                <div class="nav-dropdown-column">
+                                    <h4 class="nav-dropdown-category">AR Projects</h4>
+                                    <ul class="nav-dropdown-list">
+                                        <li><a href="index.html#work" class="nav-dropdown-link">Superpixel Christmas AR</a></li>
+                                        <li><a href="index.html#work" class="nav-dropdown-link">AR Panjat Pinang</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav-dropdown-column">
+                                    <h4 class="nav-dropdown-category">VR Projects</h4>
+                                    <ul class="nav-dropdown-list">
+                                        <li><a href="index.html#work" class="nav-dropdown-link">Universitas Airlangga VR</a></li>
+                                        <li><a href="index.html#work" class="nav-dropdown-link">VR Experiences</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav-dropdown-column">
+                                    <h4 class="nav-dropdown-category">Digital Twin</h4>
+                                    <ul class="nav-dropdown-list">
+                                        <li><a href="index.html#work" class="nav-dropdown-link">Ajinomoto Digital Twin</a></li>
+                                        <li><a href="index.html#work" class="nav-dropdown-link">Molca Factory</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav-dropdown-column">
+                                    <h4 class="nav-dropdown-category">Web Development</h4>
+                                    <ul class="nav-dropdown-list">
+                                        <li><a href="index.html#work" class="nav-dropdown-link">Bank International Portal</a></li>
+                                        <li><a href="index.html#work" class="nav-dropdown-link">Web Applications</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
                 </ul>
                 <a href="#contact" class="nav-cta-button">Chat With Us</a>
             </div>
@@ -66,16 +108,16 @@
                             Home
                             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
                         </a>
-                        <a href="#about" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium relative group">
+                        <a href="about.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium relative group">
                             About
-                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
-                        </a>
-                        <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium relative group">
-                            Services
                             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
                         </a>
                         <a href="#work" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium relative group">
                             Works
+                            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                        </a>
+                        <a href="services.html" class="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium relative group">
+                            Services
                             <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
                         </a>
                     </div>
@@ -257,62 +299,15 @@
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section class="services" id="services">
-            <div class="services-container">
-                <div class="services-horizontal">
-                    <div class="service-card-portfolio" data-card="1">
-                        <div class="service-number-white">01</div>
-                        <h3 class="service-title-white">Game</h3>
-                        <p class="service-subtitle-white">Development</p>
-                        <span class="service-tag-white">personal project</span>
-                    </div>
-                    <div class="service-card-portfolio" data-card="2">
-                        <div class="service-number-white">02</div>
-                        <h3 class="service-title-white">Augmented Reality</h3>
-                        <p class="service-subtitle-white">Development</p>
-                        <span class="service-tag-white">school group project</span>
-                    </div>
-                    <div class="service-card-portfolio" data-card="3">
-                        <div class="service-number-white">03</div>
-                        <h3 class="service-title-white">Virtual Reality</h3>
-                        <p class="service-subtitle-white">Development</p>
-                        <span class="service-tag-white">group project</span>
-                    </div>
-                    <div class="service-card-portfolio" data-card="4">
-                        <div class="service-number-white">04</div>
-                        <h3 class="service-title-white">Web</h3>
-                        <p class="service-subtitle-white">Development</p>
-                        <span class="service-tag-white">group project</span>
-                    </div>
-                    <div class="service-card-portfolio" data-card="5">
-                        <div class="service-number-white">05</div>
-                        <h3 class="service-title-white">Assets</h3>
-                        <p class="service-subtitle-white">Creation</p>
-                        <span class="service-tag-white">school group project</span>
-                    </div>
-                    <div class="service-card-portfolio" data-card="6">
-                        <div class="service-number-white">06</div>
-                        <h3 class="service-title-white">PERSONAL</h3>
-                        <p class="service-subtitle-white">PROJECTS</p>
-                        <span class="service-tag-white">personal project</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Project Showcase Section -->
         <section class="project-showcase" id="work">
             <div class="showcase-blob"></div>
             <div class="container">
                 <div class="project-header">
                     <span class="header-dot"></span>
-                    <span class="header-text">FEATURED PROJECTS</span>
+                    <span class="header-text">PROJECT HIGHLIGHT</span>
                 </div>
                 <div class="project-list-wrapper">
-                    <div class="project-image-overview" id="project-image-overview">
-                        <img src="" alt="Project Image" id="project-image" class="project-image">
-                    </div>
                     <div class="project-list">
                     <div class="project-item" data-image="project7.jpg">
                         <div class="project-content">
@@ -321,6 +316,14 @@
                                 <span class="project-client">Superpixel AR</span>
                             </div>
                             <p class="project-description">An augmented reality greeting card that brings festive celebrations to life through interactive 3D animations and immersive holiday experiences. This innovative project transforms traditional holiday greetings into magical digital moments, where recipients can unlock animated scenes, interactive games, and personalized messages through their smartphones, creating lasting memories that extend the joy of the holiday season.</p>
+                        </div>
+                    </div>
+                    <!-- Our Services Card -->
+                    <div class="our-services-card" data-service="game">
+                        <div class="service-card-number">01</div>
+                        <div class="service-card-info">
+                            <h3 class="service-card-title">Game</h3>
+                            <span class="service-card-tag">Development</span>
                         </div>
                     </div>
                     <div class="project-item" data-image="project8.jpg">
@@ -332,6 +335,14 @@
                             <p class="project-description">A comprehensive digital transformation solution for manufacturing facilities, integrating smart technologies and data visualization for enhanced operations. This enterprise-level project combines IoT sensors, real-time analytics, and intuitive dashboard interfaces to provide factory managers with unprecedented visibility into production processes, equipment performance, and operational efficiency, enabling data-driven decision-making that optimizes output and reduces downtime.</p>
                         </div>
                     </div>
+                    <!-- Our Services Card -->
+                    <div class="our-services-card" data-service="ar">
+                        <div class="service-card-number">02</div>
+                        <div class="service-card-info">
+                            <h3 class="service-card-title">AR</h3>
+                            <span class="service-card-tag">Development</span>
+                        </div>
+                    </div>
                     <div class="project-item" data-image="project9.jpg">
                         <div class="project-content">
                             <div class="project-title-wrapper">
@@ -339,6 +350,14 @@
                                 <span class="project-client">Ajinomoto Digital Twin</span>
                             </div>
                             <p class="project-description">Creating a virtual replica of production facilities enabling real-time monitoring, predictive analytics, and optimized manufacturing processes. This digital twin technology allows stakeholders to visualize entire manufacturing operations in real-time, simulate scenarios, identify bottlenecks before they occur, and make informed decisions that improve productivity, reduce costs, and ensure consistent quality across all production lines.</p>
+                        </div>
+                    </div>
+                    <!-- Our Services Card -->
+                    <div class="our-services-card" data-service="vr">
+                        <div class="service-card-number">03</div>
+                        <div class="service-card-info">
+                            <h3 class="service-card-title">VR</h3>
+                            <span class="service-card-tag">Development</span>
                         </div>
                     </div>
                     <div class="project-item" data-image="project10.jpg">
@@ -350,6 +369,14 @@
                             <p class="project-description">An augmented reality adaptation of traditional Indonesian Independence Day celebration, bringing cultural heritage into the digital age with interactive experiences. This culturally significant project preserves traditional games and celebrations while making them accessible to modern audiences through AR technology, allowing users to participate in virtual versions of classic Independence Day activities while learning about Indonesian history and cultural values.</p>
                         </div>
                     </div>
+                    <!-- Our Services Card -->
+                    <div class="our-services-card" data-service="digitaltwin">
+                        <div class="service-card-number">04</div>
+                        <div class="service-card-info">
+                            <h3 class="service-card-title">DigitalTwin</h3>
+                            <span class="service-card-tag">Development</span>
+                        </div>
+                    </div>
                     <div class="project-item" data-image="project11.jpg">
                         <div class="project-content">
                             <div class="project-title-wrapper">
@@ -357,6 +384,14 @@
                                 <span class="project-client">Reroute Fest</span>
                             </div>
                             <p class="project-description">A festival experience combining music, technology, and art through innovative digital installations and immersive audience engagement platforms. This multi-sensory event design created unforgettable moments where festival-goers could interact with synchronized light displays, reactive soundscapes, and participatory art installations that responded to their movements, creating a unique fusion of technology and creativity that elevated the entire festival experience.</p>
+                        </div>
+                    </div>
+                    <!-- Our Services Card -->
+                    <div class="our-services-card" data-service="webdev">
+                        <div class="service-card-number">05</div>
+                        <div class="service-card-info">
+                            <h3 class="service-card-title">WebDev</h3>
+                            <span class="service-card-tag">Development</span>
                         </div>
                     </div>
                     <div class="project-item" data-image="project12.jpg">
@@ -396,164 +431,8 @@
                         </div>
                     </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Process Section -->
-        <section class="process" id="process">
-            <div class="container">
-                <h2 class="section-title gradient-text">Our Process</h2>
-                <div class="process-steps">
-                    <div class="process-step">
-                        <div class="step-header">
-                            <span class="step-number gradient-text">01</span>
-                            <h3 class="step-title gradient-text">Design</h3>
-                            <span class="step-toggle">+</span>
-                        </div>
-                        <div class="step-content">
-                            <p>We begin with a deep understanding of your vision. Through collaborative design thinking, we explore creative possibilities and strategic approaches that align with your goals and resonate with your audience.</p>
-                        </div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-header">
-                            <span class="step-number gradient-text">02</span>
-                            <h3 class="step-title gradient-text">Project</h3>
-                            <span class="step-toggle">+</span>
-                        </div>
-                        <div class="step-content">
-                            <p>Project planning and architecture come next. We structure your initiative with precision, defining milestones, resources, and timelines to ensure a smooth journey from concept to execution.</p>
-                        </div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-header">
-                            <span class="step-number gradient-text">03</span>
-                            <h3 class="step-title gradient-text">Execution</h3>
-                            <span class="step-toggle">+</span>
-                        </div>
-                        <div class="step-content">
-                            <p>The final phase brings everything to life. With our hybrid execution philosophy, we blend creativity and technology seamlessly, delivering tangible results that make every idea not only seen but felt.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Super Team Section -->
-        <section class="super-team" id="team">
-            <div class="container">
-                <div class="team-header">
-                    <h2 class="section-title gradient-text">Super Team</h2>
-                    <p class="team-subtitle">The creative minds behind Wuju Space</p>
-                </div>
-                <div class="team-grid">
-                    <!-- Farhan Muhammad -->
-                    <div class="team-card">
-                        <div class="team-image-wrapper">
-                            <div class="team-image-placeholder">
-                                <img src="assets/teams/Farhan Muhammad.png" alt="Farhan Muhammad" class="team-image">
-                            </div>
-                        </div>
-                        <div class="team-info">
-                            <h3 class="team-name">Farhan Muhammad</h3>
-                            <p class="team-role">Head of Unity</p>
-                            <div class="team-details">
-                                <div class="team-detail-item">
-                                    <strong>Education:</strong>
-                                    <ul>
-                                        <li>Master of Innovation Systems and Technology (M.IST)</li>
-                                        <li>Bachelor of Game Technology (S.Tr.Kom)</li>
-                                    </ul>
-                                </div>
-                                <div class="team-detail-item">
-                                    <strong>Experience:</strong>
-                                    <ul>
-                                        <li>Head of Unity - Molca Teknologi Nusantara</li>
-                                        <li>Unity Platform Developer - Metanesia Telkom Indonesia</li>
-                                    </ul>
-                                </div>
-                                <div class="team-detail-item">
-                                    <strong>Specialize:</strong>
-                                    <ul>
-                                        <li>Unity Game Engine</li>
-                                        <li>Ideation Creator</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Jatayu Muhammad Wicaksono -->
-                    <div class="team-card">
-                        <div class="team-image-wrapper">
-                            <div class="team-image-placeholder">
-                                <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="12" cy="7" r="4"></circle>
-                                </svg>
-                            </div>
-                        </div>
-                        <div class="team-info">
-                            <h3 class="team-name">Jatayu M. Wicaksono</h3>
-                            <p class="team-role">Creative Technologist</p>
-                            <div class="team-details">
-                                <div class="team-detail-item">
-                                    <strong>Education:</strong>
-                                    <ul>
-                                        <li>Bachelor of Game Technology (S.Tr.Kom)</li>
-                                    </ul>
-                                </div>
-                                <div class="team-detail-item">
-                                    <strong>Experience:</strong>
-                                    <ul>
-                                        <li>Creative Technologist - SuperPixel</li>
-                                    </ul>
-                                </div>
-                                <div class="team-detail-item">
-                                    <strong>Specialize:</strong>
-                                    <ul>
-                                        <li>Unity Game Engine</li>
-                                        <li>3D Assets Creation</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Ilham Pratama -->
-                    <div class="team-card">
-                        <div class="team-image-wrapper">
-                            <div class="team-image-placeholder">
-                                <img src="assets/teams/Ilham Pratama.png" alt="Ilham Pratama" class="team-image">
-                            </div>
-                        </div>
-                        <div class="team-info">
-                            <h3 class="team-name">Ilham<br>Pratama</h3>
-                            <p class="team-role">Head of Web Development</p>
-                            <div class="team-details">
-                                <div class="team-detail-item">
-                                    <strong>Education:</strong>
-                                    <ul>
-                                        <li>Bachelor of Game Technology (S.Tr.Kom)</li>
-                                    </ul>
-                                </div>
-                                <div class="team-detail-item">
-                                    <strong>Experience:</strong>
-                                    <ul>
-                                        <li>Software Engineer - McEasy</li>
-                                        <li>Full Stack Developer - Machine Vision Indonesia</li>
-                                    </ul>
-                                </div>
-                                <div class="team-detail-item">
-                                    <strong>Specialize:</strong>
-                                    <ul>
-                                        <li>Solution Architecture & Software Architecture</li>
-                                        <li>Full Stack Development</li>
-                                        <li>Cloud Computing</li>
-                                        <li>Front-End Development</li>
-                                        <li>RCA (Root Cause Analysis)</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="project-image-overview" id="project-image-overview">
+                        <img src="" alt="Project Image" id="project-image" class="project-image">
                     </div>
                 </div>
             </div>
@@ -574,12 +453,8 @@
                         </p>
                     </div>
 
-                    <!-- Right Column: Contact & Social -->
+                    <!-- Right Column: Social -->
                     <div class="footer-right">
-                        <div class="footer-contact">
-                            <a href="mailto:hello@wuju.space" class="footer-link">hello@wuju.space</a>
-                            <a href="https://www.wuju.space" class="footer-link" target="_blank" rel="noopener noreferrer">www.wuju.space</a>
-                        </div>
                         <div class="footer-social">
                             <a href="https://linkedin.com" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -595,14 +470,9 @@
                                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                                 </svg>
                             </a>
-                            <a href="https://behance.net" class="social-icon" aria-label="Behance" target="_blank" rel="noopener noreferrer">
+                            <a href="https://wa.me/6282312585383" class="social-icon" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer">
                                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M22 7h-7v-2h7v2z"></path>
-                                    <path d="M15 14h-3v-2h3v2z"></path>
-                                    <circle cx="8" cy="10" r="3"></circle>
-                                    <path d="M14 12h-4"></path>
-                                    <path d="M10 12h-4"></path>
-                                    <path d="M22 21h-8v-6h8v6z"></path>
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                                 </svg>
                             </a>
                         </div>
@@ -626,9 +496,9 @@
     <script src="js/navigation.js"></script>
     <script src="js/hero.js"></script>
     <script src="js/project-showcase.js"></script>
-    <script src="js/process.js"></script>
     <script src="js/clients.js"></script>
     <script src="js/smooth-scroll.js"></script>
+    <script src="js/landing-services.js"></script>
     <script src="js/footer.js"></script>
     <script src="js/scroll-animations.js"></script>
 </body>

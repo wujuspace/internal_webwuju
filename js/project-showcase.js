@@ -25,43 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'project15.jpg': 'linear-gradient(135deg, rgba(77, 166, 255, 0.4), rgba(0, 102, 204, 0.35))'
     };
     
-    // Function to position image overview above the hovered item
-    function positionImageOverview(item) {
-        const rect = item.getBoundingClientRect();
-        const scrollY = window.scrollY || window.pageYOffset;
-        
-        // Use fixed dimensions from CSS (300x200 desktop, responsive sizes handled in CSS)
-        const imageWidth = window.innerWidth > 1024 ? 300 : (window.innerWidth > 768 ? 250 : 200);
-        const imageHeight = window.innerWidth > 1024 ? 200 : (window.innerWidth > 768 ? 160 : 140);
-        
-        // Position thumbnail above the item
-        let top = rect.top + scrollY - imageHeight - 20; // 20px gap above item
-        let left = rect.left + (rect.width / 2) - (imageWidth / 2); // Center horizontally
-        
-        // Ensure thumbnail stays within viewport
-        const viewportWidth = window.innerWidth;
-        const viewportHeight = window.innerHeight;
-        const padding = 20;
-        
-        // Constrain horizontal position
-        if (left < padding) {
-            left = padding;
-        } else if (left + imageWidth > viewportWidth - padding) {
-            left = viewportWidth - imageWidth - padding;
-        }
-        
-        // Constrain vertical position - don't go above viewport top
-        if (top < scrollY + padding) {
-            top = scrollY + padding;
-        }
-        // If thumbnail would go below viewport, position it below the item instead
-        if (top + imageHeight > scrollY + viewportHeight - padding) {
-            top = rect.bottom + scrollY + 20; // Position below item with 20px gap
-        }
-        
-        projectImageOverview.style.top = `${top}px`;
-        projectImageOverview.style.left = `${left}px`;
-    }
+    // Image is now positioned on the right side (sticky), no need for positioning function
+    // Just show/hide it on hover
     
     // Show image on hover
     projectItems.forEach(item => {
@@ -84,13 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
             projectImage.src = ''; // Clear src if using actual images
             projectImage.classList.add('active');
             
-            // Position image overview first (before showing)
-            positionImageOverview(item);
-            
-            // Force reflow to ensure position is set
-            void projectImageOverview.offsetHeight;
-            
-            // Then show it
+            // Show image overview (it's sticky positioned on the right)
             projectImageOverview.style.display = 'block';
             projectImageOverview.classList.add('show');
         });
@@ -102,18 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Update position on scroll
-    let scrollTimeout;
-    window.addEventListener('scroll', () => {
-        if (projectImageOverview.classList.contains('show')) {
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                const activeItem = document.querySelector('.project-item.active');
-                if (activeItem) {
-                    positionImageOverview(activeItem);
-                }
-            }, 10);
-        }
-    });
+    // No need for scroll position update since image is sticky positioned
 });
 
