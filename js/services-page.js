@@ -1,61 +1,108 @@
-// Services Page - Filtering and Project Card Interactions
+// Services Page - Filtering, Sorting, and Project Card Interactions
 document.addEventListener('DOMContentLoaded', function() {
-    const filterChips = document.querySelectorAll('.filter-chip');
+    const categoryChips = document.querySelectorAll('.filter-chip[data-filter]');
+    const sortChips = document.querySelectorAll('.sort-chip[data-sort]');
+    const clientChips = document.querySelectorAll('.client-chip[data-client]');
     const projectCards = document.querySelectorAll('.project-card');
+    const projectsContainer = document.querySelector('.services-projects');
     
-    if (!filterChips.length || !projectCards.length) return;
+    if (!projectCards.length || !projectsContainer) return;
     
-    let activeFilter = null;
+    let activeCategoryFilter = null;
+    let activeSort = 'newest'; // Default to newest
+    let activeClientFilter = 'all'; // Default to all clients
     
-    // Check for URL parameter to auto-select filter
+    // Initialize: Set newest as active by default
+    const newestChip = document.querySelector('.sort-chip[data-sort="newest"]');
+    if (newestChip) {
+        newestChip.classList.add('active');
+    }
+    
+    // Set "All Clients" as active by default
+    const allClientsChip = document.querySelector('.client-chip[data-client="all"]');
+    if (allClientsChip) {
+        allClientsChip.classList.add('active');
+    }
+    
+    // Check for URL parameter to auto-select category filter
     const urlParams = new URLSearchParams(window.location.search);
     const filterParam = urlParams.get('filter');
     
     if (filterParam) {
-        // Find and activate the matching chip
-        const matchingChip = Array.from(filterChips).find(chip => chip.getAttribute('data-filter') === filterParam);
+        const matchingChip = Array.from(categoryChips).find(chip => chip.getAttribute('data-filter') === filterParam);
         if (matchingChip) {
             matchingChip.classList.add('active');
-            activeFilter = filterParam;
-            filterProjects(filterParam);
+            activeCategoryFilter = filterParam;
         }
     }
     
-    // Filter chip click handler
-    filterChips.forEach(chip => {
+    // Category filter chip click handler
+    categoryChips.forEach(chip => {
         chip.addEventListener('click', function() {
             const filterValue = this.getAttribute('data-filter');
             
-            // Remove active class from all chips
-            filterChips.forEach(c => c.classList.remove('active'));
+            // Remove active class from all category chips
+            categoryChips.forEach(c => c.classList.remove('active'));
             
             // If clicking the same chip, deselect it (show all)
-            if (activeFilter === filterValue) {
-                activeFilter = null;
-                showAllProjects();
+            if (activeCategoryFilter === filterValue) {
+                activeCategoryFilter = null;
             } else {
                 // Activate clicked chip
                 this.classList.add('active');
-                activeFilter = filterValue;
-                filterProjects(filterValue);
+                activeCategoryFilter = filterValue;
             }
+            
+            applyFilters();
         });
     });
     
-    // Filter projects based on selected chip
-    function filterProjects(filterValue) {
-        projectCards.forEach((card, index) => {
-            const cardCategory = card.getAttribute('data-category');
+    // Sort chip click handler
+    sortChips.forEach(chip => {
+        chip.addEventListener('click', function() {
+            const sortValue = this.getAttribute('data-sort');
             
-            if (cardCategory === filterValue) {
-                // Show matching cards with fade in
-                setTimeout(() => {
-                    card.classList.remove('hidden');
-                    // Force reflow
-                    void card.offsetHeight;
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateX(0)';
-                }, index * 50); // Stagger animation
+            // Remove active class from all sort chips
+            sortChips.forEach(c => c.classList.remove('active'));
+            
+            // Activate clicked chip
+            this.classList.add('active');
+            activeSort = sortValue;
+            
+            applyFilters();
+        });
+    });
+    
+    // Client filter chip click handler
+    clientChips.forEach(chip => {
+        chip.addEventListener('click', function() {
+            const clientValue = this.getAttribute('data-client');
+            
+            // Remove active class from all client chips
+            clientChips.forEach(c => c.classList.remove('active'));
+            
+            // Activate clicked chip
+            this.classList.add('active');
+            activeClientFilter = clientValue;
+            
+            applyFilters();
+        });
+    });
+    
+    // Main function to apply all filters and sorting
+    function applyFilters() {
+        const visibleCards = [];
+        
+        // First, filter by category and client
+        projectCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            const cardClient = card.getAttribute('data-client');
+            
+            let matchesCategory = !activeCategoryFilter || cardCategory === activeCategoryFilter;
+            let matchesClient = activeClientFilter === 'all' || cardClient === activeClientFilter;
+            
+            if (matchesCategory && matchesClient) {
+                visibleCards.push(card);
             } else {
                 // Hide non-matching cards with fade out
                 card.style.opacity = '0';
@@ -63,21 +110,42 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 setTimeout(() => {
                     card.classList.add('hidden');
-                }, 300); // Wait for animation to complete
+                }, 300);
             }
         });
-    }
-    
-    // Show all projects
-    function showAllProjects() {
-        projectCards.forEach((card, index) => {
+        
+        // Sort visible cards
+        visibleCards.sort((a, b) => {
+            const dateA = new Date(a.getAttribute('data-date'));
+            const dateB = new Date(b.getAttribute('data-date'));
+            
+            if (activeSort === 'newest') {
+                return dateB - dateA; // Newest first
+            } else {
+                return dateA - dateB; // Oldest first
+            }
+        });
+        
+        // Reorder cards in DOM and show them
+        visibleCards.forEach((card, index) => {
+            // Remove from current position
+            card.remove();
+            
+            // Insert at new position
+            if (index === 0) {
+                projectsContainer.insertBefore(card, projectsContainer.firstChild);
+            } else {
+                projectsContainer.insertBefore(card, visibleCards[index - 1].nextSibling);
+            }
+            
+            // Show with animation
             setTimeout(() => {
                 card.classList.remove('hidden');
                 // Force reflow
                 void card.offsetHeight;
                 card.style.opacity = '1';
                 card.style.transform = 'translateX(0)';
-            }, index * 30); // Stagger animation
+            }, index * 50); // Stagger animation
         });
     }
     
@@ -85,17 +153,23 @@ document.addEventListener('DOMContentLoaded', function() {
     projectCards.forEach(card => {
         // Hover effect enhancement
         card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateX(12px)';
-            this.style.boxShadow = '0 6px 25px rgba(0, 0, 0, 0.12)';
+            if (!this.classList.contains('hidden')) {
+                this.style.transform = 'translateX(12px)';
+                this.style.boxShadow = '0 6px 25px rgba(0, 0, 0, 0.12)';
+            }
         });
         
         card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateX(0)';
-            this.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+            if (!this.classList.contains('hidden')) {
+                this.style.transform = 'translateX(0)';
+                this.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+            }
         });
         
         // Click effect with ripple animation
         card.addEventListener('click', function(e) {
+            if (this.classList.contains('hidden')) return;
+            
             // Create ripple effect
             const ripple = document.createElement('span');
             const rect = this.getBoundingClientRect();
@@ -133,11 +207,15 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Active state animation
         card.addEventListener('mousedown', function() {
-            this.style.transform = 'translateX(6px) scale(0.96)';
+            if (!this.classList.contains('hidden')) {
+                this.style.transform = 'translateX(6px) scale(0.96)';
+            }
         });
         
         card.addEventListener('mouseup', function() {
-            this.style.transform = 'translateX(12px) scale(1)';
+            if (!this.classList.contains('hidden')) {
+                this.style.transform = 'translateX(12px) scale(1)';
+            }
         });
     });
     
@@ -153,4 +231,3 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 });
-

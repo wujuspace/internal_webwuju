@@ -59,7 +59,8 @@
 
 .filter-chips {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 0.75rem;
 }
 
@@ -73,13 +74,14 @@
     font-weight: 400;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-align: left;
+    text-align: center;
     font-family: 'Poppins', sans-serif;
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    width: 100%;
+    justify-content: center;
     white-space: nowrap;
+    width: auto;
 }
 
 .filter-chip:hover {
@@ -97,7 +99,7 @@
 .services-projects {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 1.5rem;
 }
 
 .project-card {
@@ -113,6 +115,7 @@
     overflow: hidden;
     opacity: 1;
     transform: translateX(0);
+    border-radius: 16px;
 }
 
 .project-card::before {
