@@ -19,7 +19,7 @@
 }
 
 body {
-    font-family: 'ttnorman', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     background-color: var(--beige);
     color: var(--text-dark);
     overflow-x: auto;
@@ -76,7 +76,7 @@ html {
     letter-spacing: -0.03em;
     line-height: 1.1;
     color: var(--text-dark);
-    font-family: 'ttnorman', sans-serif;
+    font-family: 'Poppins', sans-serif;
     opacity: 0;
     animation: splashTextFadeIn 0.8s ease-out 0.2s forwards;
 }
@@ -438,7 +438,7 @@ html {
 }
 
 .hero-text-bold {
-    font-family: 'ttnorman', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 800;
     letter-spacing: -0.03em;
     display: inline-block;
@@ -456,7 +456,7 @@ html {
 }
 
 .hero-text-serif {
-    font-family: 'ttnorman', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 300;
     font-style: italic;
     letter-spacing: -0.02em;
@@ -496,7 +496,7 @@ html {
     transform: translate(-50%, -50%);
     font-size: clamp(8rem, 15vw, 12rem);
     font-weight: 300;
-    font-family: 'ttnorman', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: rgba(0, 0, 0, 0.15);
     letter-spacing: -0.05em;
     pointer-events: none;
@@ -522,7 +522,7 @@ html {
     font-size: 2rem;
     font-weight: 700;
     color: var(--white);
-    font-family: 'ttnorman', sans-serif;
+    font-family: 'Poppins', sans-serif;
     letter-spacing: -0.02em;
 }
 
@@ -882,7 +882,7 @@ html {
     transition: color 0.3s ease;
     margin-top: 1rem;
     max-width: 100%;
-    font-family: 'ttnorman', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .project-item:hover .project-title,
@@ -2109,7 +2109,7 @@ html {
     cursor: pointer;
     transition: all 0.3s ease;
     text-align: left;
-    font-family: 'ttnorman', sans-serif;
+    font-family: 'Poppins', sans-serif;
     position: relative;
     display: flex;
     align-items: center;

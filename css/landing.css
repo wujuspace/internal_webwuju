@@ -65,7 +65,7 @@
 }
 
 .hero-text-bold {
-    font-family: 'ttnorman', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 800;
     letter-spacing: -0.03em;
     display: inline-block;
@@ -83,7 +83,7 @@
 }
 
 .hero-text-serif {
-    font-family: 'ttnorman', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 300;
     font-style: italic;
     letter-spacing: -0.02em;
@@ -123,7 +123,7 @@
     transform: translate(-50%, -50%);
     font-size: clamp(8rem, 15vw, 12rem);
     font-weight: 300;
-    font-family: 'ttnorman', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: rgba(0, 0, 0, 0.15);
     letter-spacing: -0.05em;
     pointer-events: none;
@@ -149,7 +149,7 @@
     font-size: 2rem;
     font-weight: 700;
     color: var(--white);
-    font-family: 'ttnorman', sans-serif;
+    font-family: 'Poppins', sans-serif;
     letter-spacing: -0.02em;
 }
 
@@ -177,6 +177,7 @@
 /* Hero Section Blue Styles */
 .hero-section-blue {
     position: relative;
+    background-color: var(--white);
 }
 
 /* Animated Gradient Background */
@@ -186,7 +187,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background: linear-gradient(to bottom, #ffffff, #e3f2fd, #bbdefb);
+    background: linear-gradient(to bottom, var(--white), #e3f2fd, #bbdefb);
     z-index: 0;
 }
 
@@ -697,7 +698,7 @@
     transition: color 0.3s ease;
     margin-top: 1rem;
     max-width: 100%;
-    font-family: 'ttnorman', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Our Services Section */
@@ -1325,7 +1326,88 @@
 
 /* Dark Theme Styles for Landing Page */
 [data-theme="dark"] .hero {
-    background-color: var(--white);
+    background-color: var(--white) !important;
+}
+
+[data-theme="dark"] .hero-section-blue {
+    background-color: var(--white) !important;
+}
+
+[data-theme="dark"] section.hero-section-blue {
+    background-color: var(--white) !important;
+}
+
+[data-theme="dark"] .background-gradient-animation {
+    background: linear-gradient(to bottom, var(--white), #1a2332, #0f1419) !important;
+}
+
+[data-theme="dark"] .gradient-blob-1 {
+    background: radial-gradient(circle, rgba(77, 166, 255, 0.3), rgba(0, 102, 204, 0.2), transparent);
+}
+
+[data-theme="dark"] .gradient-blob-2 {
+    background: radial-gradient(circle, rgba(77, 166, 255, 0.25), rgba(0, 102, 204, 0.15), transparent);
+}
+
+[data-theme="dark"] .gradient-blob-3 {
+    background: radial-gradient(circle, rgba(77, 166, 255, 0.2), rgba(0, 102, 204, 0.12), transparent);
+}
+
+[data-theme="dark"] .gradient-blob-4 {
+    background: radial-gradient(circle, rgba(77, 166, 255, 0.3), rgba(0, 102, 204, 0.2), transparent);
+}
+
+[data-theme="dark"] .gradient-blob-5 {
+    background: radial-gradient(circle, rgba(77, 166, 255, 0.2), rgba(0, 102, 204, 0.12), transparent);
+}
+
+/* Dark Theme Text Colors for Hero Section */
+[data-theme="dark"] .hero-section-blue .text-gray-700,
+[data-theme="dark"] .hero-section-blue .text-gray-900,
+[data-theme="dark"] .hero-section-blue h1,
+[data-theme="dark"] .hero-section-blue h2,
+[data-theme="dark"] .hero-section-blue h3 {
+    color: var(--text-dark) !important;
+}
+
+[data-theme="dark"] .hero-section-blue .text-gray-600,
+[data-theme="dark"] .hero-section-blue p {
+    color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .hero-section-blue .text-blue-700,
+[data-theme="dark"] .hero-section-blue .text-blue-600,
+[data-theme="dark"] .hero-section-blue a {
+    color: var(--gradient-blue-light) !important;
+}
+
+[data-theme="dark"] .hero-section-blue .hover\:text-blue-600:hover {
+    color: var(--gradient-blue-light) !important;
+}
+
+[data-theme="dark"] .hero-section-blue .bg-blue-100\/80 {
+    background-color: rgba(77, 166, 255, 0.15) !important;
+    border-color: rgba(77, 166, 255, 0.3) !important;
+}
+
+[data-theme="dark"] .hero-section-blue .border-blue-200 {
+    border-color: rgba(77, 166, 255, 0.3) !important;
+}
+
+[data-theme="dark"] .hero-section-blue .border-blue-300 {
+    border-color: rgba(77, 166, 255, 0.4) !important;
+}
+
+[data-theme="dark"] .hero-section-blue .bg-white\/80 {
+    background-color: rgba(26, 26, 26, 0.8) !important;
+}
+
+[data-theme="dark"] .hero-section-blue .hover\:bg-white:hover {
+    background-color: rgba(26, 26, 26, 0.95) !important;
+}
+
+[data-theme="dark"] .hero-section-blue .hover\:border-blue-400:hover {
+    border-color: rgba(77, 166, 255, 0.5) !important;
 }
 
 [data-theme="dark"] .hero-number {
@@ -1413,5 +1495,14 @@
 [data-theme="dark"] .team-card:hover {
     box-shadow: 0 12px 30px rgba(94, 92, 230, 0.25);
     border-color: rgba(94, 92, 230, 0.3);
+}
+
+/* Dark Theme - Clients/Company Logos - Make them brighter */
+[data-theme="dark"] .client-logo-img {
+    filter: grayscale(0%) opacity(0.9) brightness(1.2) contrast(1.1) !important;
+}
+
+[data-theme="dark"] .client-logo:hover .client-logo-img {
+    filter: grayscale(0%) opacity(1) brightness(1.3) contrast(1.2) !important;
 }
 
