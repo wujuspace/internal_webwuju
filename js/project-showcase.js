@@ -25,8 +25,29 @@ document.addEventListener('DOMContentLoaded', function() {
         'project15.jpg': 'linear-gradient(135deg, rgba(77, 166, 255, 0.4), rgba(0, 102, 204, 0.35))'
     };
     
-    // Image is now positioned on the right side (sticky), no need for positioning function
-    // Just show/hide it on hover
+    // Function to position image vertically aligned with the project item
+    function positionImageWithItem(item) {
+        const itemRect = item.getBoundingClientRect();
+        const listWrapper = document.querySelector('.project-list-wrapper');
+        const listWrapperRect = listWrapper.getBoundingClientRect();
+        
+        // Calculate the top position relative to the list wrapper
+        // Get the scroll position of the window
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Calculate the absolute position of the item
+        const itemAbsoluteTop = itemRect.top + scrollTop;
+        
+        // Calculate the absolute position of the list wrapper
+        const listWrapperAbsoluteTop = listWrapperRect.top + scrollTop;
+        
+        // Calculate relative position within the list wrapper
+        const relativeTop = itemAbsoluteTop - listWrapperAbsoluteTop;
+        
+        // Set the image position to align with the item
+        projectImageOverview.style.top = `${relativeTop}px`;
+        projectImageOverview.style.transform = 'translateY(0)';
+    }
     
     // Show image on hover
     projectItems.forEach(item => {
@@ -49,7 +70,10 @@ document.addEventListener('DOMContentLoaded', function() {
             projectImage.src = ''; // Clear src if using actual images
             projectImage.classList.add('active');
             
-            // Show image overview (it's sticky positioned on the right)
+            // Position image aligned with the item
+            positionImageWithItem(item);
+            
+            // Show image overview
             projectImageOverview.style.display = 'block';
             projectImageOverview.classList.add('show');
         });
@@ -61,6 +85,16 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // No need for scroll position update since image is sticky positioned
+    // Update image position on scroll
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            const activeItem = document.querySelector('.project-item.active');
+            if (activeItem && projectImageOverview.classList.contains('show')) {
+                positionImageWithItem(activeItem);
+            }
+        }, 10);
+    });
 });
 

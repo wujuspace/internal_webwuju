@@ -584,13 +584,14 @@
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    position: sticky;
-    top: 120px;
+    position: absolute;
+    top: 0;
+    right: 0;
     z-index: 100;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     transform-origin: bottom center;
     display: block;
 }
@@ -655,32 +656,37 @@
     gap: 1rem;
 }
 
-.project-title-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    width: 100%;
-    gap: 3rem;
-    flex-wrap: wrap;
-}
-
 .project-title {
-    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+    font-size: clamp(2rem, 3vw, 3rem);
     font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 1.1;
     color: var(--text-dark);
     transition: color 0.3s ease;
-    flex: 1;
-    min-width: 200px;
+    margin-bottom: 1rem;
+}
+
+.project-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
 }
 
 .project-client {
-    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
     font-weight: 500;
     color: var(--text-muted);
-    white-space: nowrap;
     transition: color 0.3s ease;
+}
+
+.project-tag {
+    font-size: clamp(0.85rem, 1.1vw, 1rem);
+    font-weight: 400;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+    font-style: italic;
 }
 
 .project-description {
@@ -694,72 +700,120 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Our Services Cards */
-.our-services-card {
-    background-color: var(--light-gray);
+/* Our Services Section */
+.our-services-section {
+    padding: 6rem 0;
+    background-color: var(--white);
+}
+
+.services-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.service-category-card {
+    width: 100%;
+    height: 500px;
+    background: linear-gradient(135deg, rgba(77, 166, 255, 0.1), rgba(0, 102, 204, 0.05));
+    border-radius: 16px;
     padding: 2.5rem;
-    margin: 1rem 0;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    justify-content: space-between;
     position: relative;
     overflow: hidden;
-    max-width: 700px;
-    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.our-services-card:hover {
-    background-color: rgba(245, 245, 245, 0.9);
-    transform: translateX(8px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+.service-category-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
 }
 
-.service-card-number {
-    font-size: clamp(4rem, 6vw, 5rem);
+.service-category-card:hover .service-category-image {
+    opacity: 0.5;
+}
+
+.service-category-card .service-category-number,
+.service-category-card .service-category-title,
+.service-category-card .service-category-tag {
+    position: relative;
+    z-index: 1;
+}
+
+.service-category-card:nth-child(1) {
+    background: linear-gradient(135deg, #ffb366, #ffd966);
+}
+
+.service-category-card:nth-child(2) {
+    background: linear-gradient(135deg, #66b3ff, #b366ff);
+}
+
+.service-category-card:nth-child(3) {
+    background: linear-gradient(135deg, #ff99cc, #cc99ff);
+}
+
+.service-category-card:nth-child(4) {
+    background: linear-gradient(135deg, #cccccc, #ffffff);
+}
+
+.service-category-card:nth-child(5) {
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+}
+
+.service-category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service-category-number {
+    font-size: clamp(4rem, 8vw, 6rem);
     font-weight: 700;
-    color: var(--text-dark);
-    opacity: 0.15;
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1;
     letter-spacing: -0.05em;
-    transition: all 0.3s ease;
+    margin-bottom: 1rem;
 }
 
-.our-services-card:hover .service-card-number {
-    opacity: 0.25;
-    transform: scale(1.05);
-}
-
-.service-card-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.service-card-title {
-    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+.service-category-title {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
     font-weight: 700;
-    color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.95);
     letter-spacing: -0.02em;
-    transition: color 0.3s ease;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
 }
 
-.our-services-card:hover .service-card-title {
-    color: var(--gradient-blue-dark);
+.service-category-card:nth-child(4) .service-category-number,
+.service-category-card:nth-child(4) .service-category-title,
+.service-category-card:nth-child(5) .service-category-number,
+.service-category-card:nth-child(5) .service-category-title {
+    color: rgba(0, 0, 0, 0.9);
 }
 
-.service-card-tag {
-    font-size: clamp(0.85rem, 1vw, 0.95rem);
-    color: var(--text-muted);
+.service-category-tag {
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 400;
     text-transform: lowercase;
     letter-spacing: 0.05em;
-    transition: color 0.3s ease;
 }
 
-.our-services-card:hover .service-card-tag {
-    color: var(--text-dark);
+.service-category-card:nth-child(4) .service-category-tag,
+.service-category-card:nth-child(5) .service-category-tag {
+    color: rgba(0, 0, 0, 0.7);
 }
 
 .project-item:hover .project-title,
@@ -768,7 +822,9 @@
 }
 
 .project-item:hover .project-client,
-.project-item.active .project-client {
+.project-item.active .project-client,
+.project-item:hover .project-tag,
+.project-item.active .project-tag {
     color: var(--white);
     opacity: 0.95;
 }
@@ -1146,9 +1202,20 @@
         max-width: 100%;
     }
 
-    .our-services-card {
-        max-width: 100%;
-        padding: 2rem 1.5rem;
+    .services-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+    }
+
+    .service-category-card {
+        height: 400px;
+        padding: 2rem;
+    }
+
+    .project-image-overview {
+        width: 300px;
+        height: 220px;
     }
 
     .project-description {
@@ -1188,6 +1255,20 @@
 }
 
 @media (max-width: 480px) {
+    .services-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .service-category-card {
+        height: 350px;
+        padding: 1.5rem;
+    }
+
+    .project-image-overview {
+        display: none;
+    }
+
     .team-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;

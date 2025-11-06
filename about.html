@@ -30,8 +30,47 @@
             </div>
             <div class="nav-menu-right">
                 <ul class="nav-links">
+                    <li class="nav-dropdown-wrapper">
+                        <span class="nav-link nav-dropdown-trigger">
+                            Works
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left: 0.5rem; transition: transform 0.3s ease;">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </span>
+                        <div class="nav-dropdown">
+                            <div class="nav-dropdown-content">
+                                <div class="nav-dropdown-column">
+                                    <h4 class="nav-dropdown-category">AR Projects</h4>
+                                    <ul class="nav-dropdown-list">
+                                        <li><a href="index.html#work" class="nav-dropdown-link">Superpixel Christmas AR</a></li>
+                                        <li><a href="index.html#work" class="nav-dropdown-link">AR Panjat Pinang</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav-dropdown-column">
+                                    <h4 class="nav-dropdown-category">VR Projects</h4>
+                                    <ul class="nav-dropdown-list">
+                                        <li><a href="index.html#work" class="nav-dropdown-link">Universitas Airlangga VR</a></li>
+                                        <li><a href="index.html#work" class="nav-dropdown-link">VR Experiences</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav-dropdown-column">
+                                    <h4 class="nav-dropdown-category">Digital Twin</h4>
+                                    <ul class="nav-dropdown-list">
+                                        <li><a href="index.html#work" class="nav-dropdown-link">Ajinomoto Digital Twin</a></li>
+                                        <li><a href="index.html#work" class="nav-dropdown-link">Molca Factory</a></li>
+                                    </ul>
+                                </div>
+                                <div class="nav-dropdown-column">
+                                    <h4 class="nav-dropdown-category">Web Development</h4>
+                                    <ul class="nav-dropdown-list">
+                                        <li><a href="index.html#work" class="nav-dropdown-link">Bank International Portal</a></li>
+                                        <li><a href="index.html#work" class="nav-dropdown-link">Web Applications</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                     <li><a href="services.html" class="nav-link">Services</a></li>
-                    <li><a href="index.html#work" class="nav-link">Works</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
                 </ul>
                 <a href="index.html#contact" class="nav-cta-button">Chat With Us</a>
@@ -41,17 +80,242 @@
 
     <!-- Main Content -->
     <div id="main-content" class="main-content">
-        <!-- About Hero Section -->
+        <!-- Hero / What Section -->
         <section class="about-hero">
             <div class="container">
                 <div class="about-hero-content">
-                    <h1 class="about-hero-title">We're <span class="about-hero-highlight">Wuju Space</span></h1>
-                    <p class="about-hero-description">
-                        We're a passionate team of storytellers & creatives crafting impactful animations and immersive experiences through creativity, innovation, and collaboration.
+                    <div class="about-hero-visual">
+                        <div class="hero-3d-object" id="hero-3d-object">
+                            <!-- Placeholder for 3D object or illustration -->
+                            <div class="hero-3d-placeholder">
+                                <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="150" cy="150" r="120" fill="url(#gradient1)" opacity="0.8"/>
+                                    <circle cx="150" cy="120" r="60" fill="url(#gradient2)" opacity="0.6"/>
+                                    <defs>
+                                        <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#4DA6FF;stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#0066CC;stop-opacity:1" />
+                                        </linearGradient>
+                                        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#FFB366;stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#FFD966;stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-hero-text">
+                        <p class="about-hero-paragraph">
+                            WujuSpace is where ideas take shape — a creative studio that brings imagination to life through immersive experiences, virtual simulations, games, and digital twins.
+                        </p>
+                        <p class="about-hero-paragraph">
+                            We bridge creativity and technology to give your vision both shape and soul.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who Section (Zig-Zag Layout) -->
+        <section class="about-who">
+            <div class="container">
+                <!-- Origins Block -->
+                <div class="who-block who-block-left">
+                    <div class="who-block-visual">
+                        <div class="who-circle">
+                            <div class="who-circle-content">
+                                <!-- Placeholder for illustration -->
+                                <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
+                                    <circle cx="100" cy="100" r="80" fill="rgba(255, 99, 99, 0.2)"/>
+                                    <path d="M60 100 L100 60 L140 100 L100 140 Z" fill="rgba(255, 99, 99, 0.4)"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="who-block-text">
+                        <h2 class="who-block-title">Origins</h2>
+                        <p class="who-block-description">
+                            Born from curiosity and craftsmanship, WujuSpace started with the simple idea that imagination deserves form.
+                        </p>
+                        <a href="#" class="who-block-link">Learn more</a>
+                    </div>
+                </div>
+
+                <!-- Team Block -->
+                <div class="who-block who-block-right">
+                    <div class="who-block-text">
+                        <h2 class="who-block-title">Team</h2>
+                        <p class="who-block-description">
+                            We're designers, developers, and dreamers who turn vision into vivid experiences.
+                        </p>
+                        <a href="#team" class="who-block-link">Meet the team</a>
+                    </div>
+                    <div class="who-block-visual">
+                        <div class="who-circle">
+                            <div class="who-circle-content">
+                                <!-- Placeholder for illustration -->
+                                <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
+                                    <circle cx="100" cy="100" r="80" fill="rgba(102, 179, 255, 0.2)"/>
+                                    <rect x="60" y="60" width="80" height="80" rx="10" fill="rgba(102, 179, 255, 0.4)"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Culture Block -->
+                <div class="who-block who-block-left">
+                    <div class="who-block-visual">
+                        <div class="who-circle">
+                            <div class="who-circle-content">
+                                <!-- Placeholder for illustration -->
+                                <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
+                                    <circle cx="100" cy="100" r="80" fill="rgba(255, 153, 204, 0.2)"/>
+                                    <circle cx="100" cy="100" r="50" fill="rgba(255, 153, 204, 0.4)"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="who-block-text">
+                        <h2 class="who-block-title">Culture</h2>
+                        <p class="who-block-description">
+                            We work with intention — serious about creativity, but relaxed in process.
+                        </p>
+                        <a href="#process" class="who-block-link">See how we work</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Section (Core Values) -->
+        <section class="about-why">
+            <div class="container">
+                <div class="why-header">
+                    <h2 class="why-title">Why Work With Us?</h2>
+                    <p class="why-subtitle">
+                        End-to-end creativity, durable solutions and simple collaboration. We have packed these and much more into our beautiful digital experiences.
                     </p>
-                    <p class="about-hero-subdescription">
-                        We're serious about creativity, but we keep things relaxed. We make it feel natural, intuitive, and enjoyable from start to finish.
-                    </p>
+                </div>
+                <div class="why-cards">
+                    <div class="why-card">
+                        <div class="why-card-icon">
+                            <!-- Placeholder icon -->
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <div class="why-card-number">01</div>
+                        <h3 class="why-card-title">Visionary</h3>
+                        <p class="why-card-description">
+                            We see beyond visuals; we translate imagination into impact.
+                        </p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-card-icon">
+                            <!-- Placeholder icon -->
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <div class="why-card-number">02</div>
+                        <h3 class="why-card-title">Collaborative</h3>
+                        <p class="why-card-description">
+                            Your ideas fuel our process — we build together.
+                        </p>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-card-icon">
+                            <!-- Placeholder icon -->
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                            </svg>
+                        </div>
+                        <div class="why-card-number">03</div>
+                        <h3 class="why-card-title">Durable</h3>
+                        <p class="why-card-description">
+                            Our creations are designed to last and evolve with your story.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How Section (Process) -->
+        <section class="about-how" id="process">
+            <div class="container">
+                <div class="how-content">
+                    <div class="how-accordion">
+                        <h2 class="how-title">How We Work?</h2>
+                        <p class="how-subtitle">
+                            We're serious about creativity, but we keep things relaxed. We make it feel natural, intuitive, and enjoyable from start to finish.
+                        </p>
+                        <div class="process-steps">
+                            <div class="process-step">
+                                <div class="step-header">
+                                    <span class="step-number">01</span>
+                                    <h3 class="step-title">Discovery & Briefing</h3>
+                                    <span class="step-toggle">+</span>
+                                </div>
+                                <div class="step-content">
+                                    <p>We start by understanding your vision and objectives.</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-header">
+                                    <span class="step-number">02</span>
+                                    <h3 class="step-title">Concept & Ideation</h3>
+                                    <span class="step-toggle">+</span>
+                                </div>
+                                <div class="step-content">
+                                    <p>Transforming abstract ideas into tangible direction.</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-header">
+                                    <span class="step-number">03</span>
+                                    <h3 class="step-title">Storyboarding & Design</h3>
+                                    <span class="step-toggle">+</span>
+                                </div>
+                                <div class="step-content">
+                                    <p>Defining flow, emotion, and experience.</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-header">
+                                    <span class="step-number">04</span>
+                                    <h3 class="step-title">Creation & Development</h3>
+                                    <span class="step-toggle">+</span>
+                                </div>
+                                <div class="step-content">
+                                    <p>Building immersive experiences that breathe life into your concept.</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-header">
+                                    <span class="step-number">05</span>
+                                    <h3 class="step-title">Delivery & Support</h3>
+                                    <span class="step-toggle">+</span>
+                                </div>
+                                <div class="step-content">
+                                    <p>Ensuring everything feels right and runs perfectly.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="how-visual">
+                        <div class="how-image-placeholder">
+                            <!-- Placeholder for supporting image -->
+                            <div class="how-image-content">
+                                <p>Supporting Image</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -176,124 +440,6 @@
             </div>
         </section>
 
-        <!-- How We Process Section -->
-        <section class="process" id="process">
-            <div class="container">
-                <div class="process-header">
-                    <h2 class="section-title gradient-text">How <span class="process-title-italic">We</span> <span class="process-title-bold">Process?</span></h2>
-                    <p class="process-subtitle">We're serious about creativity, but we keep things relaxed. We make it feel natural, intuitive, and enjoyable from start to finish.</p>
-                </div>
-                <div class="process-steps">
-                    <div class="process-step">
-                        <div class="step-header">
-                            <span class="step-number gradient-text">01</span>
-                            <h3 class="step-title gradient-text">Design</h3>
-                            <span class="step-toggle">+</span>
-                        </div>
-                        <div class="step-content">
-                            <p>We begin with a deep understanding of your vision. Through collaborative design thinking, we explore creative possibilities and strategic approaches that align with your goals and resonate with your audience.</p>
-                        </div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-header">
-                            <span class="step-number gradient-text">02</span>
-                            <h3 class="step-title gradient-text">Project</h3>
-                            <span class="step-toggle">+</span>
-                        </div>
-                        <div class="step-content">
-                            <p>Project planning and architecture come next. We structure your initiative with precision, defining milestones, resources, and timelines to ensure a smooth journey from concept to execution.</p>
-                        </div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-header">
-                            <span class="step-number gradient-text">03</span>
-                            <h3 class="step-title gradient-text">Execution</h3>
-                            <span class="step-toggle">+</span>
-                        </div>
-                        <div class="step-content">
-                            <p>The final phase brings everything to life. With our hybrid execution philosophy, we blend creativity and technology seamlessly, delivering tangible results that make every idea not only seen but felt.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Why Work With Us Section -->
-        <section class="why-work-with-us">
-            <div class="container">
-                <div class="why-header">
-                    <h2 class="section-title gradient-text">Why <span class="why-title-highlight">Work With Us?</span></h2>
-                </div>
-                <div class="why-content">
-                    <div class="why-grid">
-                        <div class="why-card">
-                            <div class="why-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                                    <path d="M2 17l10 5 10-5"></path>
-                                    <path d="M2 12l10 5 10-5"></path>
-                                </svg>
-                            </div>
-                            <h3 class="why-card-title">Innovation First</h3>
-                            <p class="why-card-description">We stay at the forefront of technology, bringing cutting-edge solutions and creative approaches to every project.</p>
-                        </div>
-                        <div class="why-card">
-                            <div class="why-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>
-                            </div>
-                            <h3 class="why-card-title">Collaborative Approach</h3>
-                            <p class="why-card-description">We believe in partnership. Your vision becomes our mission, and we work together to achieve exceptional results.</p>
-                        </div>
-                        <div class="why-card">
-                            <div class="why-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                                </svg>
-                            </div>
-                            <h3 class="why-card-title">Quality Driven</h3>
-                            <p class="why-card-description">Every detail matters. We're committed to delivering excellence and exceeding expectations in every project we undertake.</p>
-                        </div>
-                        <div class="why-card">
-                            <div class="why-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <polyline points="12 6 12 12 16 14"></polyline>
-                                </svg>
-                            </div>
-                            <h3 class="why-card-title">Timely Delivery</h3>
-                            <p class="why-card-description">We understand deadlines. Our streamlined process ensures on-time delivery without compromising quality.</p>
-                        </div>
-                        <div class="why-card">
-                            <div class="why-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                                </svg>
-                            </div>
-                            <h3 class="why-card-title">End-to-End Service</h3>
-                            <p class="why-card-description">From concept to launch, we handle everything. Our comprehensive service covers design, development, and deployment.</p>
-                        </div>
-                        <div class="why-card">
-                            <div class="why-icon">
-                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                </svg>
-                            </div>
-                            <h3 class="why-card-title">Proven Track Record</h3>
-                            <p class="why-card-description">Trusted by leading brands and organizations. Our portfolio speaks for itself with successful projects across industries.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Footer -->
         <footer class="footer" id="contact">
             <div class="container">
@@ -348,6 +494,6 @@
     <script src="js/navigation.js"></script>
     <script src="js/process.js"></script>
     <script src="js/smooth-scroll.js"></script>
+    <script src="js/about-hero.js"></script>
 </body>
 </html>
-
